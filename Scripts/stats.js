@@ -229,6 +229,7 @@ async function create_dashboard(btn){
     </div>
     
 `
+    await generate_txt()
     document.getElementById("stats").innerHTML = html
 
 }
@@ -320,6 +321,47 @@ async function show_stats(range, btn){
     
     document.getElementById("stats").innerHTML = html
 
+}
+
+async function generate_txt(){
+
+    const fs = require("fs")
+
+    drop_day = await get_count(1)
+    drop_week = await get_count(7)
+    drop_month = await get_count(30)
+    drop_year = await get_count(365)
+    drop_all = await get_count(50000)
+    
+    not_drop_day = await get_count(1, false)
+    not_drop_week = await get_count(7, false)
+    not_drop_month = await get_count(30, false)
+    not_drop_year = await get_count(365, false)
+    not_drop_all = await get_count(50000, false)
+
+    dropchance_day = Math.round((100*drop_day)/(drop_day + not_drop_day))
+    dropchance_week = Math.round((100*drop_week)/(drop_week + not_drop_week))
+    dropchance_month = Math.round((100*drop_month)/(drop_month + not_drop_month))
+    dropchance_year = Math.round((100*drop_year)/(drop_year + not_drop_year))
+    dropchance_all = Math.round((100*drop_all)/(drop_all + not_drop_all))
+
+    fs.writeFile("Info/drop_day.txt", drop_day.toString(), function(err) {});
+    fs.writeFile("Info/drop_week.txt", drop_week.toString(), function(err) {});
+    fs.writeFile("Info/drop_month.txt", drop_month.toString(), function(err) {});
+    fs.writeFile("Info/drop_year.txt", drop_year.toString(), function(err) {});
+    fs.writeFile("Info/drop_alltime.txt", drop_all.toString(), function(err) {});
+    
+    fs.writeFile("Info/not_drop_day.txt", not_drop_day.toString(), function(err) {});
+    fs.writeFile("Info/not_drop_week.txt", not_drop_week.toString(), function(err) {});
+    fs.writeFile("Info/not_drop_month.txt", not_drop_month.toString(), function(err) {});
+    fs.writeFile("Info/not_drop_year.txt", not_drop_year.toString(), function(err) {});
+    fs.writeFile("Info/not_drop_alltime.txt", not_drop_all.toString(), function(err) {});
+    
+    fs.writeFile("Info/dropchance_day.txt", dropchance_day.toString(), function(err) {});
+    fs.writeFile("Info/dropchance_week.txt", dropchance_week.toString(), function(err) {});
+    fs.writeFile("Info/dropchance_month.txt", dropchance_month.toString(), function(err) {});
+    fs.writeFile("Info/dropchance_year.txt", dropchance_year.toString(), function(err) {});
+    fs.writeFile("Info/dropchance_alltime.txt", dropchance_all.toString(), function(err) {});
 }
 
 async function save_file(stats){

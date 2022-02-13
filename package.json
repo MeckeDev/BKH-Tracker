@@ -1,0 +1,22 @@
+{
+  "name": "bkh-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --arch=x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^17.0.0",
+    "electron-packager": "^15.4.0"
+  },
+  "dependencies": {
+    "electron-db": "^0.15.7",
+    "gkm": "^0.2.0",
+    "mysql": "^2.18.1"
+  }
+}

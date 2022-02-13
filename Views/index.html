@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <!-- Import Scripts -->
+        <script src="../Scripts/stats.js"></script>
+
+        <title>BKH-Tracker by Mecke_Dev</title>
+    </head>
+
+    <style>
+
+        /* disable selection */
+        :not(input):not(textarea),
+        :not(input):not(textarea)::after,
+        :not(input):not(textarea)::before {
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+        input, button, textarea, :focus {
+            outline: none;
+        }
+
+        /* disable image and anchor dragging */
+        a:not([draggable=true]), img:not([draggable=true]) {
+            -webkit-user-drag: none;
+        }
+        a[href^="http://"],
+        a[href^="https://"],
+        a[href^="ftp://"] {
+            -webkit-user-drag: auto;
+        }
+
+    </style>
+
+    <body class="bg-dark user-select-none" onload="is_empty()">
+
+        <div id="navbar" class="pt-3 pl-5 w-75">
+            <button type="button" id="btn_menu" onclick="create_dashboard(this)" class="btn float-left mx-2">Menu</button>
+            <button type="button" id="btn_today" onclick="show_stats('1', this)" class="btn float-left mx-2">Today</button>
+            <button type="button" id="btn_week" onclick="show_stats('7', this)" class="btn float-left mx-2">Week</button>
+            <button type="button" id="btn_month" onclick="show_stats('30', this)" class="btn float-left mx-2">Month</button>
+            <button type="button" id="btn_year" onclick="show_stats('365', this)" class="btn float-left mx-2">Year</button>
+            <button type="button" id="btn_all" onclick="show_stats('50000', this)" class="btn float-left mx-2">All Time</button>
+            <br><hr/>
+        </div>
+
+        <div id="content" style="min-height: 80vh;" class="p-2 bg-secondary">
+            <div id="stats" style="min-height:80vh; color:white;" class="w-100 rounded bg-dark p-2 user-select-none">
+
+                
+            
+            </div>
+
+        </div>
+        <p style="color:#fff;" class="text-center mt-3"> This Tool was created by Mecke_Dev <button type="button" onclick="open_link('https://steamcommunity.com/id/mecke_dev/')" class="btn btn-sm float-right mb-1 ml-2 mr-4">Steam</button> <button type="button" onclick="open_link('https://discord.gg/bxyaN3J')" class="btn btn-sm float-right mb-1 mx-2">Discord</button> <button type="button" onclick="open_link('https://github.com/MeckeDev')" class="btn btn-sm float-right mb-1 mx-2">GitHub</button> </p>
+    </body>
+
+</html>

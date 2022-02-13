@@ -6,14 +6,14 @@ function createWindow () {
     const win = new BrowserWindow({
       width: 800,
       height: 920,
-      resizable: true,
+      resizable: false,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
     }
     })
   
-    // win.removeMenu()
+    win.removeMenu()
     win.loadFile('Views/index.html')
   }
 

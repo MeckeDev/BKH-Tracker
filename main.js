@@ -7,6 +7,7 @@ function createWindow () {
       width: 800,
       height: 920,
       resizable: false,
+      icon: __dirname + '/icon.png',
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,

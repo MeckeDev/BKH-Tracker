@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --arch=x64"
+    "build": "electron-packager . --arch=x64 --icon 'icon.png'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mecke_Dev",
   "license": "ISC",
   "devDependencies": {
     "electron": "^17.0.0",
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "electron-db": "^0.15.7",
-    "gkm": "^0.2.0",
-    "mysql": "^2.18.1"
+    "gkm": "^0.2.0"
   }
 }

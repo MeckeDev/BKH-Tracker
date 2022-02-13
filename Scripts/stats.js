@@ -166,7 +166,7 @@ async function create_dashboard(btn){
 
         <h5>Add new Drop</h5>
 
-        <div class="card-body">
+        <div class="card-body ml-5">
         <button style="width: 30%" onclick="add_bkh(1)" type="button" class="btn float-left mr-1 bg-success">Dropped<br/> Numpad 8</button> 
         <button style="width: 30%" onclick="remove_last()" type="button" class="btn float-left mr-1 bg-warning">Remove last<br/> Numpad 5</button> 
             <button style="width: 30%" onclick="add_bkh(0)" type="button" class="btn float-left bg-danger">Not Dropped<br/> Numpad 2</button><br/>
@@ -229,6 +229,20 @@ async function create_dashboard(btn){
     </div>
     
 `
+    if(drop_all == 0 && not_drop_all == 0) html = `
+    <div style="color: #000; width: 90%" class="card text-center ml-5 mt-3">
+
+        <h5>Add new Drop</h5>
+
+        <div class="card-body ml-5">
+        <button style="width: 30%" onclick="add_bkh(1)" type="button" class="btn float-left mr-1 bg-success">Dropped<br/> Numpad 8</button> 
+        <button style="width: 30%" onclick="remove_last()" type="button" class="btn float-left mr-1 bg-warning">Remove last<br/> Numpad 5</button> 
+            <button style="width: 30%" onclick="add_bkh(0)" type="button" class="btn float-left bg-danger">Not Dropped<br/> Numpad 2</button><br/>
+        </div>
+    </div>
+    
+    <div style="font-size: 32px; color: #000;" class="w-100 bg-warning text-center rounded p-3 mt-5">No Drops saved.</div>`
+
     await generate_txt()
     document.getElementById("stats").innerHTML = html
 

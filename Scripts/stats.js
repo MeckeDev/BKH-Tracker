@@ -405,6 +405,12 @@ All Time
     fs.writeFile(__dirname + "/Info/dropchance_month.txt", dropchance_month.toString(), function(err) {});
     fs.writeFile(__dirname + "/Info/dropchance_year.txt", dropchance_year.toString(), function(err) {});
     fs.writeFile(__dirname + "/Info/dropchance_alltime.txt", dropchance_all.toString(), function(err) {});
+			
+    fs.writeFile(__dirname + "/Info/obs_day.txt", `Today: ✔ ${drop_day}  ❌ ${not_drop_day}  Rate: ${dropchance_day}`, function(err) {});
+    fs.writeFile(__dirname + "/Info/obs_week.txt", `Week: ✔ ${drop_week}  ❌ ${not_drop_week}  Rate: ${dropchance_week}`, function(err) {});
+    fs.writeFile(__dirname + "/Info/obs_month.txt", `Month: ✔ ${drop_month}  ❌ ${not_drop_month}  Rate: ${dropchance_month}`, function(err) {});
+    fs.writeFile(__dirname + "/Info/obs_year.txt", `Year: ✔ ${drop_year}  ❌ ${not_drop_year}  Rate: ${dropchance_year}`, function(err) {});
+    fs.writeFile(__dirname + "/Info/obs_alltime.txt", `All-Time: ✔ ${drop_all}  ❌ ${not_drop_all}  Rate: ${dropchance_all}`, function(err) {});
 
     fs.writeFile(__dirname + "/Info/summary.txt", summary, function(err) {});
 }

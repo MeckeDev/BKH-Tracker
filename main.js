@@ -15,7 +15,7 @@ function createWindow () {
     })
   
     win.removeMenu()
-    win.loadFile('Views/index.html')
+    win.loadFile('index.html')
   }
 
   app.whenReady().then(() => {

@@ -390,37 +390,24 @@ All Time
     No Drop: ${not_drop_all}
     Dropchance: ${dropchance_all}
     `
-
-	var info_path = require('path').resolve(__dirname, '..');
 	
-    fs.writeFile(info_path + "\\Info\\drop_day.txt", drop_day.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\drop_week.txt", drop_week.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\drop_month.txt", drop_month.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\drop_year.txt", drop_year.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\drop_alltime.txt", drop_all.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/drop_day.txt", drop_day.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/drop_week.txt", drop_week.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/drop_month.txt", drop_month.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/drop_year.txt", drop_year.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/drop_alltime.txt", drop_all.toString(), function(err) {});
 			
-    fs.writeFile(info_path + "\\Info\\not_drop_day.txt", not_drop_day.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\not_drop_week.txt", not_drop_week.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\not_drop_month.txt", not_drop_month.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\not_drop_year.txt", not_drop_year.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\not_drop_alltime.txt", not_drop_all.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/not_drop_day.txt", not_drop_day.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/not_drop_week.txt", not_drop_week.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/not_drop_month.txt", not_drop_month.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/not_drop_year.txt", not_drop_year.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/not_drop_alltime.txt", not_drop_all.toString(), function(err) {});
 			
-    fs.writeFile(info_path + "\\Info\\dropchance_day.txt", dropchance_day.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\dropchance_week.txt", dropchance_week.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\dropchance_month.txt", dropchance_month.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\dropchance_year.txt", dropchance_year.toString(), function(err) {});
-    fs.writeFile(info_path + "\\Info\\dropchance_alltime.txt", dropchance_all.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/dropchance_day.txt", dropchance_day.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/dropchance_week.txt", dropchance_week.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/dropchance_month.txt", dropchance_month.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/dropchance_year.txt", dropchance_year.toString(), function(err) {});
+    fs.writeFile(__dirname + "/Info/dropchance_alltime.txt", dropchance_all.toString(), function(err) {});
 
-    fs.writeFile(info_path + "\\Info\\summary.txt", summary, function(err) {});
-}
-
-async function save_file(stats){
-
-    const fs = require("fs")
-
-    fs.writeFile("Info/stats.json", JSON.stringify(stats, null, 4), function(err) {
-        if (err) {
-            console.log(err);
-        }
-    });
+    fs.writeFile(__dirname + "/Info/summary.txt", summary, function(err) {});
 }

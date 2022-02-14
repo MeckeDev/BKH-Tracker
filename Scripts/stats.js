@@ -3,8 +3,8 @@ const path = require('path');
 var gkm = require('gkm');
 
 
-const db_location = path.join(__dirname, '')
-db.createTable('bkh_drops', db_location, (succ, msg) => {
+
+db.createTable('bkh_drops', (succ, msg) => {
 })
 
 async function is_empty(){
@@ -68,12 +68,9 @@ async function add_bkh(dropped=1){
  
     obj.time = formatDate(new Date());
     obj.drop = dropped;
-
-    
-    const db_location = path.join(__dirname, '')
      
     if (db.valid('bkh_drops')) {
-      db.insertTableContent('bkh_drops', db_location, obj, (succ, msg) => {
+      db.insertTableContent('bkh_drops', obj, (succ, msg) => {
       })
     }
 
@@ -96,9 +93,9 @@ async function set_buttons(btn=document.getElementById("btn_menu")){
 async function remove_last(){
 
     var all_ids = []
-    const db_location = path.join(__dirname, '')
+    
 
-    db.getAll('bkh_drops', db_location, (succ, data) => {
+    db.getAll('bkh_drops', (succ, data) => {
         if (succ) {
 
             for(x in data){
@@ -107,7 +104,7 @@ async function remove_last(){
         }
     })
 
-    db.deleteRow('bkh_drops', db_location, {'id':  all_ids[all_ids.length - 1]}, (succ, msg) => {
+    db.deleteRow('bkh_drops', {'id':  all_ids[all_ids.length - 1]}, (succ, msg) => {
         console.log(msg);
       });
 
@@ -116,12 +113,12 @@ async function remove_last(){
 
 async function get_count(range, get=true){
 
-    const db_location = path.join(__dirname, '')
+    
 
     var got = 0
     var not = 0
 
-    db.getAll('bkh_drops', db_location, (succ, data) => {
+    db.getAll('bkh_drops', (succ, data) => {
         if (succ) {
 
             for(x in data){
@@ -256,7 +253,7 @@ async function show_stats(range, btn){
 
     set_buttons(btn)
     
-    const db_location = path.join(__dirname, '')
+    
     range = parseInt(range)
 
     var got = 0
@@ -285,7 +282,7 @@ async function show_stats(range, btn){
 
         <tbody>`
     
-        db.getAll('bkh_drops', db_location, (succ, data) => {
+        db.getAll('bkh_drops', (succ, data) => {
             if (succ) {
 
                 if(data.length <= 0){
